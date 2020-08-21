@@ -10,7 +10,10 @@
                         </div> Witaj, {{\Illuminate\Support\Facades\Auth::user()->name}}!
                     </h4>
                     <p class="opacity-75 ">
-                        Znajdujesz się aktualnie na pulpicie swojego konta. Możesz tutaj w szybki sposób zarządzać działaniem twojej firmy. Powodzenia!
+                        Znajdujesz się aktualnie na pulpicie swojego konta. Możesz tutaj w szybki sposób zarządzać działaniem twojej firmy.
+                    </p>
+                    <p class="opacity-75 ">
+                    I pamiętaj, zeżryj swoje negatywne nastawienie, Powodzenia!
                     </p>
 
 

@@ -53,6 +53,11 @@ Route::domain('jp2jmd.pl')->group(function () {
         Route::get('/u/{id}','UserController@index')->name('user.index');
         Route::get('/ustawienia','UserController@index')->name('user.settings.index');
 
+
+    });
+    Route::namespace('Api')->prefix('api')->name('api.')->group(function () {
+        Route::post('/posts', 'PostsController@index')->name('get.posts');
+
     });
     Route::group(['middleware' => ['admin']], function () {
         Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {

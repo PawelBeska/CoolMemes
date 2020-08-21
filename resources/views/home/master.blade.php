@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <title>JP2JmD: Strona główna</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="stylesheet" href="{{URL::asset('assets/home/css/comment.css')}}" media="print" onload="this.media='all'">

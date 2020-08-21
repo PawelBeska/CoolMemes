@@ -34,8 +34,6 @@ function errors(data, selector) {
     }
 }
 
-
-
 /*
  * HEADER FUNCTIONS
  */

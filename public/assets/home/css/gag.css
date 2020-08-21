@@ -1642,6 +1642,7 @@ section#list-view-2 .post-section .icon img {
 section#individual-post .post-section .message,
 section#list-view-2 .post-section .message {
     display: inline-block;
+    background: none!important;
     line-height: 20px;
 }
 

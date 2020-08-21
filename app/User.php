@@ -31,6 +31,14 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Group', 'id', 'group_id');
     }
+    public function post()
+    {
+        return $this->hasMany(Post::class,'author_id');
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class,'author_id');
+    }
     public function permissions()
     {
         return $this->hasOne('App\Group', 'id', 'group_id')->first()->permissions();

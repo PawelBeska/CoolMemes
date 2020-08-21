@@ -11,12 +11,9 @@ use Yajra\DataTables\DataTables;
 
 class PostsController extends Controller
 {
-
-
-
     public function store()
     {
-        return DataTables::of(Post::with('tag')->get())->make(true);
+        return DataTables::of(Post::withCount(['tags', 'comments'])->with('author')->get())->make(true);
 
     }
 

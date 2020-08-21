@@ -37,10 +37,9 @@
 
                     <div class="card-body">
                         <div class="table-responsive p-t-10">
-                            <table id="example" class="table   " style="width:100%">
+                            <table id="" class="table" style="width:100%">
                                 <thead>
                                 <tr>
-                                    <th>lp</th>
                                     <th>Autor</th>
                                     <th>Główna</th>
                                     <th>Komentarze</th>
@@ -48,39 +47,52 @@
                                     <th>Wybierz</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Raz4r</td>
-                                    <td><font color="red">Nie</font></td>
-                                    <td>15</td>
-                                    <th>Śmieszne,Fajne,Śmieszne,Fajne,Śmieszne</th>
-                                    <td><div class="btn-group" role="group">
+                                <tbody> </tbody>
+                            </table>
+                            <script>
+                                $(document).ready(function () {
+                                    window.datatable = $('.table').DataTable({
+                                        columns: [
+                                            {data: 'author.name', "sClass": 'author.name'},
+                                            {data: 'home', "sClass": 'home'},
+                                            {data: 'comments_count', "sClass": 'comments_count'},
+                                            {data: 'tags_count', "sClass": 'tags_count'},
+                                            {
+                                                name: "buttons",
+                                                "targets": -1,
+                                                "data": null,
+                                                "defaultContent": `<div class="btn-group" role="group">
                                             <button id="btnGroupDrop1" type="button"
                                                     class="btn btn-info dropdown-toggle" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="false">
                                                 Wybierz
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                <a class="dropdown-item" href="#">Podgląd</a>
-                                                <a class="dropdown-item" href="#">Edytuj</a>
-                                                <a class="dropdown-item" href="#">Statystyki</a>
-                                                <a class="dropdown-item" href="#">Usuń</a>
+                                                <a class="dropdown-item view"  href="#">Podgląd</a>
+                                                <a class="dropdown-item update" href="#">Szybka edycja</a>
+                                                <a class="dropdown-item update" href="#">Edycja</a>
+                                                <a class="dropdown-item remove" href="#">Zablokuj</a>
                                             </div>
-                                        </div></td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>lp</th>
-                                    <th>Imię</th>
-                                    <th>Nazwisko</th>
-                                    <th>Numer telefonu</th>
-                                    <th>Status</th>
-                                    <th>Wybierz</th>
-                                </tr>
-                                </tfoot>
-                            </table>
+                                        </div>`
+                                            }
+                                        ],
+                                        "autoWidth": true,
+                                        'responsive': true,
+                                        "processing": true,
+                                        "serverSide": true,
+                                        oLanguage: {
+                                            sProcessing: `<div class="lime-body">    <div class="container">        <div class="row" style="  position: absolute;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);">            <div class="col-md-8">                <div class="spinner-border" style="color: #747985" le="status">                    <span class="sr-only">Loading...</span>                </div>            </div>        </div>    </div></div>`
+                                        },
+                                        rowId: 'id',
+                                        ajax: {
+                                            "url": "{{Route('admin.posts.store')}}",
+                                            "type": "POST",
+                                            "data":{"_token": "{{ csrf_token() }}"}
+                                        }
+                                    });
+                                });
+
+                            </script>
                         </div>
                     </div>
                 </div>
