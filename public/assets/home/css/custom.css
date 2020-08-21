@@ -1,0 +1,95 @@
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+a span.material-icons {
+  display: inline-flex;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+.card-header{
+  background-color: #131414;
+  color: white;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #000000;
+    border-color: #999999;
+}
+.btn-primary:hover, .btn-primary:active,.btn-primary:focus {
+    color: #fff;
+    background-color: #131414!important;
+    border-color: #999999!important;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+
+#nprogress .bar {
+  height: 2px!important;
+  background: #009769!important;
+  background-size: 500%!important;
+  animation: 2s linear infinite barprogress, .3s fadein!important;
+  width: 100%!important;
+}
+@keyframes barprogress{
+  0% {
+    background-position:0% 0
+  }
+  to{
+    background-position:125% 0
+  }
+}
+
+
+#nprogress .spinner-icon {
+  border-top-color: transparent!important;
+  border-left-color: transparent!important;
+}
+
+.alert{
+    color: #131414!important;
+    background-color: #ffffff!important;
+    border-color: #131414!important;
+}
+#customFile .custom-file-control:lang(en)::after {
+    content: "Select file...";
+}
+
+#customFile .custom-file-control:lang(en)::before {
+    content: "Click me";
+}
+
+/*when a value is selected, this class removes the content */
+.custom-file-control.selected:lang(en)::after {
+    content: "" !important;
+}
+
+.custom-file {
+    overflow: hidden;
+}
+.custom-file-control {
+    white-space: nowrap;
+}
+
+.source span.material-icons{
+  overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    font-size: 48px;
+    margin-left: -24px;
+}

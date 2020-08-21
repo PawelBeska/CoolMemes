@@ -1,0 +1,352 @@
+.notification-detail {
+    width: 600px;
+    margin-top: 20px
+}
+
+.notification-detail .notification-list {
+    overflow: visible;
+    max-height: none
+}
+
+.notification-detail .avatar-container {
+    left: 0
+}
+
+.notification-detail .post-container {
+    right: 0
+}
+
+.notification-detail .content {
+    margin-left: 60px;
+    margin-right: 60px
+}
+
+.notification-detail .section-title {
+    margin-bottom: 20px
+}
+
+.notification-detail .section-title h3 {
+    font-size: 22px
+}
+
+.notification-text-list {
+    position: relative
+}
+
+.notification-text-list ul {
+    list-style-type: none
+}
+
+.notification-text-list li {
+    position: relative;
+    overflow: hidden
+}
+
+.notification-text-list .label {
+    border-bottom: 1px solid #ddd;
+    margin-top: 20px
+}
+
+.notification-text-list li.message {
+    border-bottom: 1px solid #eee
+}
+
+.notification-text-list li:last-child {
+    border-bottom: 0
+}
+
+.notification-text-list .label:first-child {
+    margin-top: 0
+}
+
+.notification-text-list .label h3 {
+    font-size: 15px;
+    padding: 10px 0
+}
+
+.notification-text-list p {
+    padding: 10px 0 10px 24px;
+    line-height: 1.3em
+}
+
+.notification-text-list a {
+    color: #000;
+    font-weight: 700
+}
+
+.notification-text-list a:hover {
+    text-decoration: underline
+}
+
+.notification-text-list span.time {
+    display: inline-block;
+    color: #999;
+    font-size: 11px
+}
+
+.notification-text-list img.icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    text-indent: -999px;
+    overflow: hidden;
+    border-radius: 2px
+}
+
+.notification-text-list .empty-message {
+    height: 20px;
+    line-height: 20px;
+    width: 300px;
+    color: #999;
+    font-weight: 700;
+    font-size: 15px
+}
+
+.notification-text-list .empty-message p {
+    padding: 0
+}
+
+body.theme-dark .notification-text-list .label {
+    border-color: hsla(0, 0%, 100%, .2)
+}
+
+body.theme-dark .notification-text-list a {
+    color: #fff
+}
+
+body.theme-dark .notification-text-list li.message {
+    border-color: hsla(0, 0%, 100%, .2)
+}
+
+section.settings {
+    position: relative;
+    margin: 40px auto 0;
+    min-height: 500px
+}
+
+section.settings h2 {
+    font-size: 36px;
+    line-height: normal
+}
+
+ul.form-nav {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+ul.form-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+    line-height: 19px;
+    font-weight: 700;
+    padding: 10px;
+    width: 240px;
+    border-radius: 2px
+}
+
+ul.form-nav li a.selected {
+    background-color: #131414;
+    color: #fff;
+    border-color: #fff;
+}
+
+form.setting {
+    overflow: hidden;
+    margin-left: 300px
+}
+
+form.setting textarea {
+    width: 438px;
+    height: 80px
+}
+
+.date-picker {
+    overflow: hidden;
+    width: 420px
+}
+
+.date-picker input.day,
+.date-picker input.month,
+.date-picker input.year {
+    float: left;
+    text-align: center
+}
+
+.date-picker input.year {
+    width: 37%
+}
+
+.date-picker input.day,
+.date-picker input.month {
+    width: 20%;
+    margin-left: 2%
+}
+
+.setting-social-connect {
+    width: 460px
+}
+
+.setting-social-connect label {
+    margin-bottom: 6px;
+    display: block;
+    font-weight: 700
+}
+
+.setting-social-connect .connection {
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1)
+}
+
+.setting-social-connect .connection .field {
+    margin: 0;
+    padding: 10px
+}
+
+.setting-social-connect .connection p.label {
+    line-height: 20px;
+    padding: 10px;
+    float: left;
+    color: #999;
+    font-weight: 700
+}
+
+.setting-social-connect .connection a.btn,
+.setting-social-connect .connection a.thick {
+    float: right
+}
+
+.setting-social-connect .connection .checklist {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    margin: 0 20px
+}
+
+.setting-social-connect .connection .field.checkbox {
+    padding: 10px 0
+}
+
+section#delete-account {
+    width: 460px;
+    margin: 100px auto;
+    font-size: 14px
+}
+
+section#delete-account h2 {
+    font-size: 36px;
+    line-height: normal;
+    margin-bottom: 5px
+}
+
+section#delete-account p.lead {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+    color: #999
+}
+
+section#delete-account .btn-container a.btn,
+section#delete-account .btn-container a.thick {
+    text-align: center;
+    display: block;
+    width: 220px
+}
+
+section#delete-account .btn-container a.thick {
+    font-size: 12px;
+    color: #999;
+    display: inline-block;
+    width: auto;
+    padding: 10px 0
+}
+
+form#delete-account {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #eee
+}
+
+form#delete-account .field {
+    margin-top: 0
+}
+
+form#delete-account .btn-container {
+    padding: 0
+}
+
+section#social-transfer {
+    width: 600px;
+    margin: 100px auto;
+    font-size: 14px
+}
+
+section#social-transfer h2 {
+    font-size: 26px;
+    margin-bottom: 5px
+}
+
+section#social-transfer p.lead {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+    color: #999
+}
+
+section#social-transfer .btn-container .btn,
+section#social-transfer .btn-container a.thick {
+    text-align: center;
+    display: block;
+    width: 220px
+}
+
+section#social-transfer .btn-container a.thick {
+    font-size: 12px;
+    color: #999;
+    display: inline-block;
+    width: auto;
+    padding: 10px 0
+}
+
+.privacy a.btn,
+.privacy p {
+    margin-top: 8px
+}
+
+.do-not-sell {
+    width: 460px;
+    margin: 0 auto
+}
+
+.do-not-sell h2 {
+    font-size: 24px
+}
+
+.do-not-sell p {
+    margin: 16px 0;
+    line-height: 20px
+}
+
+.do-not-sell a.btn.grey {
+    color: #000
+}
+
+form a.link {
+    color: black!important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+form small a {
+    color: black!important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+form small a:hover {
+    text-decoration: none;
+}
