@@ -29,6 +29,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,500,600" rel="stylesheet">
     <link rel='stylesheet' href='{{URL::asset('assets/fonts/jost/jost.css')}}'/>
+    <link rel='stylesheet' type='text/css' href='{{URL::asset('assets/admin/vendor/select2/select2.min.css')}}'/>
     <!--Material Icons-->
     <link rel='stylesheet' type='text/css' href='{{URL::asset('assets/admin/fonts/material/materialdesignicons.min.css')}}'/>
     <!--Bootstrap + atmos Admin CSS-->
@@ -41,7 +42,7 @@
     <script src="{{URL::asset('assets/admin/vendor/jquery/jquery.min.js')}}"></script>
 
 
-    <link rel='stylesheet' type='text/css' href='{{URL::asset('assets/admin/vendor/select2/select2.min.css')}}'/>
+
     <script>
         $.ajaxSetup({
             headers: {

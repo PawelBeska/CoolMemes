@@ -57,6 +57,8 @@ function errors(data, selector) {
 ==================================================================== */
 function init() {
     console.log('init');
+
+
     let formCreate = $("form.create");
     formCreate.submit(function (e) {
         e.preventDefault();
@@ -95,6 +97,10 @@ function init() {
                 errors(data, $('#form-errors'));
             }
         });
+    });
+
+    $('button.create').on('click',function(){
+        $('div.create').removeClass('d-none');
     });
     $('.table').on('click', 'a.remove', function (e) {
         e.preventDefault();

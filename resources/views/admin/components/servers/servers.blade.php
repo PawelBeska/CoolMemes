@@ -2,7 +2,7 @@
     <div class="bg-dark">
         <div class="container  m-b-30">
             <div class="row">
-                <div class="col-12 text-white p-t-40 p-b-90">
+                <div class="col-12 text-white p-t-40 p-b-20">
 
                     <h4 class="">
                         <div class="avatar avatar-xl">
@@ -14,19 +14,21 @@
                     <p class="opacity-75 ">
                         Poniżej znajduje się lista serwerów aktualnie dodanych do twojego systemu. Masz możliwość
                         zarządzania nimi.
-
-
                     </p>
+
+                    <button type="button" class="btn m-b-15 ml-2 mr-2 btn-success create">Dodaj serwer</button>
 
 
                 </div>
+
+
+                <div id="form-errors" class="col-12 p-b-40"></div>
             </div>
         </div>
     </div>
 
     <div class="container  pull-up">
-        <div id="form-errors"></div>
-        <div class="row create">
+        <div class="row create d-none">
             <div class="col-xl">
                 <div class="card">
                     <div class="card-body">

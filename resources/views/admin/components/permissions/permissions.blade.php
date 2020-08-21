@@ -17,23 +17,23 @@
 
 
                     </p>
-                  
-                  <button type="button" class="btn m-b-15 ml-2 mr-2 btn-success">Dodaj permisje</button>
+
+                  <button type="button" class="btn m-b-15 ml-2 mr-2 btn-success create">Dodaj permisje</button>
 
 
                 </div>
-              
-              
+
+
         <div id="form-errors" class="col-12 p-b-40"></div>
-  
+
           </div>
-       
-      
+
+
       </div>
     </div>
 
     <div class="container  pull-up">
-        <div class="row create">
+        <div class="row create d-none">
             <div class="col-xl">
                 <div class="card">
                     <div class="card-body">
@@ -64,7 +64,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 {!! Form::label('name','Permisja:') !!}
-                                {!! Form::select('name',\App\Permission::pluck('name','id'),null,['class'=>'form-control custom-select','required']) !!}
+                                {!! Form::select('name',\App\Permission::pluck('name','id'),null,['class'=>'form-control custom-select','required','disabled'=>'true']) !!}
                             </div>
 
                         </div>
