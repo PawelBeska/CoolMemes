@@ -25,7 +25,6 @@ class AdminPermissionUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|unique:permissions'
         ];
     }
 }

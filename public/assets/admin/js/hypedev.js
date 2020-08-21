@@ -58,7 +58,7 @@ function errors(data, selector) {
 function init() {
     console.log('init');
 
-
+    $('.js-select2').select2();
     let formCreate = $("form.create");
     formCreate.submit(function (e) {
         e.preventDefault();
@@ -99,7 +99,7 @@ function init() {
         });
     });
 
-    $('button.create').on('click',function(){
+    $('button.create').on('click', function () {
         $('div.create').removeClass('d-none');
     });
     $('.table').on('click', 'a.remove', function (e) {
@@ -107,6 +107,7 @@ function init() {
         $.ajax({
             url: loc + $(this).parents('tr').attr('id'),
             type: 'DELETE',
+            data: {'_token': $('meta[name="csrf-token"]').attr('content')},
             success: function (data) {
                 errors(data, $('#form-errors'));
                 window.datatable.ajax.reload();
@@ -127,12 +128,14 @@ function init() {
         });
         var tr = $(this).parents('tr');
         $('form.update').find(':input.form-control').each(function (e) {
+            $(this).find('option').attr("selected", false);
+            $('form.update .js-select2').val($('form.update .js-select2').val()).trigger('change');
             let text = tr.find("td." + $(this).attr('id').replace('[]', '')).text();
             if (text.length) {
                 if ($(this)[0].nodeName == 'INPUT') {
                     $(this).val(text);
                 } else if (text.indexOf('[') > -1) {
-                    $('form.update .select2[name="genrs[]"').val(JSON.parse(text)).trigger('change');
+                    $('form.update .js-select2[name="group[]"]').val(JSON.parse(text)).trigger('change');
                 } else if (text.indexOf('{') > -1) {
                     $(this).val(text);
                 } else if (text.indexOf(',') > -1) {
@@ -150,8 +153,10 @@ function init() {
                         }
                     });
                 }
+                $('form.update .js-select2').val($('form.update .js-select2').val()).trigger('change');
             }
         });
+
 
     });
 }
@@ -161,7 +166,6 @@ $(document).ready(function () {
 
 
     RefreshMenu();
-
 
 
     $('li.menu-item > a').on('click', function (e) {

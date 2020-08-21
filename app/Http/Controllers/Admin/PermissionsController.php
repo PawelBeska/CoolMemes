@@ -33,10 +33,15 @@ class PermissionsController extends Controller
     public function update($id, AdminPermissionUpdateRequest $request)
     {
         $input = $request->all();
+        $message = new MessageBag();
         if ($permission = Permission::find($id)) {
-            $message = new MessageBag();
-            if ($permission->group()->sync($input['group']))
-                $message->add('success', 'Pomyślnie przypisano permisję do grup');
+            if (!key_exists('group', $input)) {
+                $permission->group()->detach();
+                $message->add('success', 'Pomyślnie odłączono permisję od grup');
+            } else {
+                if ($permission->group()->sync($input['group']))
+                    $message->add('success', 'Pomyślnie przypisano permisję do grup');
+            }
         } else $message->add('error', 'Taka grupa nie istnieje!');
         return $message->jsonSerialize();
     }

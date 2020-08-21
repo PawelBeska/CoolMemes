@@ -16,7 +16,7 @@ class GroupsController extends Controller
     public function store(AdminGroupStoreRequest $request)
     {
 
-        return DataTables::of(Group::withCount(['users','permissions'])->get())->make(true);
+        return DataTables::of(Group::withCount(['users', 'permissions'])->get())->make(true);
     }
 
     public function create(AdminGroupCreateRequest $request)
@@ -38,12 +38,15 @@ class GroupsController extends Controller
         } else $message->add('error', 'Taka grupa nie istnieje!');
         return $message->jsonSerialize();
     }
+
     public function destroy($id, AdminGroupDestroyRequest $request)
     {
         $message = new MessageBag();
-        if ($genre = Genre::find($id)) {
-            $genre->delete();
-            $message->add('success', 'Pomyślnie usunięto gatunek!');
+        if ($genre = Group::find($id)) {
+            if (!Group::find($id)->permissions()->get()->count()) {
+                $genre->delete();
+                $message->add('success', 'Pomyślnie usunięto gatunek!');
+            } else $message->add('error', 'Grupa posiada permisje, usuń przypisane permisje a następnie usuń grupę!');
         } else $message->add('error', 'Taka grupa nie istnieje!');
         return $message->jsonSerialize();
     }
