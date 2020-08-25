@@ -4,16 +4,19 @@
             <div class="row">
                 <div class="col-12 text-white p-t-40 p-b-90">
 
-                    <h4 class="">  <div class="avatar avatar-md">
+                    <h4 class="">
+                        <div class="avatar avatar-md">
                                     <span class="avatar-title rounded-circle bg-info"> <i
-                                                class="mdi mdi-desktop-mac"></i> </span>
-                        </div> Witaj, {{\Illuminate\Support\Facades\Auth::user()->name}}!
+                                            class="mdi mdi-desktop-mac"></i> </span>
+                        </div>
+                        Witaj, {{\Illuminate\Support\Facades\Auth::user()->name}}!
                     </h4>
                     <p class="opacity-75 ">
-                        Znajdujesz się aktualnie na pulpicie swojego konta. Możesz tutaj w szybki sposób zarządzać działaniem twojej firmy.
+                        Znajdujesz się aktualnie na pulpicie swojego konta. Możesz tutaj w szybki sposób zarządzać
+                        działaniem twojej firmy.
                     </p>
                     <p class="opacity-75 ">
-                    I pamiętaj, zeżryj swoje negatywne nastawienie, Powodzenia!
+                        I pamiętaj, zeżryj swoje negatywne nastawienie, Powodzenia!
                     </p>
 
 
@@ -128,29 +131,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6">
-
-                <!--widget card begin-->
-                <div class="card m-b-30">
-                    <div class="card-header">
-                        <h5 class="m-b-0">
-                            <i class="mdi mdi-calendar"></i> Kalendarz
-                        </h5>
-                        <p class="m-b-0 text-muted">
-                            Kalendarz na miesiąc.
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body" style="position: relative;">
+                        <h3> Posty i użytkownicy</h3>
+                        <p class="text-muted">
+                            Wyświetlanie ilości postów oraz komentarzy
                         </p>
-                    </div>
-                    <div class="card-body ">
-                        <div class="col-md-12 m-b-30">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div id="calendar"></div>
-                                </div>
-                            </div>
+                        <div id="chart-09">
                         </div>
                     </div>
                 </div>
-                <!--widget card ends-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+
 
                 <!--widget card begin-->
                 <div class="card m-b-30 ">
@@ -248,9 +244,10 @@
 
 
             </div>
-
         </div>
 
 
     </div>
 </section>
+
+

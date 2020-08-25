@@ -2901,11 +2901,11 @@ i.icn-comment.action-flag {
 .shade {
     background-color: rgba(0, 0, 0, .5);
     position: fixed;
-    z-index: 10;
+    z-index: 20;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0
+    right: 0;
 }
 
 .shade.transparent {
@@ -3252,9 +3252,7 @@ i.icn-comment.action-flag {
     top: 0;
     bottom: 0;
     left: -264px;
-    width: calc(50vw + 264px);
-    z-index: 10;
-    will-change: transform
+    z-index: 22;
 }
 
 .slideout-open,

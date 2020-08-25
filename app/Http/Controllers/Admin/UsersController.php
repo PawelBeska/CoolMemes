@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Home\UserController;
 use App\Http\Requests\AdminUserCreateRequest;
 use App\Http\Requests\AdminUserDestroyRequest;
 use App\Http\Requests\AdminUserStoreRequest;
 use App\Http\Requests\AdminUserUpdateRequest;
+use App\Page;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,14 +18,18 @@ use Yajra\DataTables\DataTables;
 class UsersController extends Controller
 {
 
+
     public function store(AdminUserStoreRequest $request)
     {
         return DataTables::of(User::with('group')->get())->make(true);
     }
-    public function showData(AdminUserStoreRequest $request)
+
+    public function showData($id, $request)
     {
+        return User::with('group')->findorfail($id);
 
     }
+
     public function create(AdminUserCreateRequest $request)
     {
         $input = $request->all();
@@ -44,6 +50,7 @@ class UsersController extends Controller
         } else $message->add('error', 'Taki użytkownik nie istnieje!');
         return $message->jsonSerialize();
     }
+
     public function destroy($id, AdminUserDestroyRequest $request)
     {
         $message = new MessageBag();

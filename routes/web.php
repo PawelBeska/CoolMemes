@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
+Route::namespace('Api')->prefix('api')->name('api.')->group(function () {
+    Route::post('/posts', 'PostsController@index')->name('get.posts');
+    Route::post('/t', 'TagsController@index')-> name('get.tags');
+});
+
 
 Route::domain('m.jp2jmd.pl')->group(function () {
     Route::get('/', function () {
@@ -55,10 +60,7 @@ Route::domain('jp2jmd.pl')->group(function () {
 
 
     });
-    Route::namespace('Api')->prefix('api')->name('api.')->group(function () {
-        Route::post('/posts', 'PostsController@index')->name('get.posts');
 
-    });
     Route::group(['middleware' => ['admin']], function () {
         Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
             Route::get('/', 'IndexController@index')->name('index');
@@ -66,6 +68,9 @@ Route::domain('jp2jmd.pl')->group(function () {
             Route::resource('posts', 'PostsController');
             Route::resource('groups', 'GroupsController');
             Route::resource('permissions', 'PermissionsController');
+            Route::prefix('settings')->name('settings.')->group(function () {
+                Route::resource('', 'SettingsController');
+            });
             Route::namespace('Bots')->prefix('bots')->name('bots.')->group(function () {
               Route::resource('', 'BotsController');
               Route::resource('statistics', 'StatisticsController');

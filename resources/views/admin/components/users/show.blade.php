@@ -9,8 +9,8 @@
                                 <img src="assets/img/users/user-3.jpg" alt="..." class="avatar-img rounded-circle">
                             </div>
                             <div class="media-body m-auto">
-                                <h5 class="mt-0">Amelia Andreoiu <img src="https://twemoji.maxcdn.com/2/72x72/1f397.png" width="20" alt=""></h5>
-                                <div class="opacity-75">Entrepreneur | Investor | Blogger</div>
+                                <h5 class="mt-0">{!! $data['name'] !!} <img src="https://twemoji.maxcdn.com/2/72x72/1f397.png" width="20" alt=""></h5>
+                                <div class="opacity-75">{!! $data['group']['name'] !!}</div>
                             </div>
                         </div>
 

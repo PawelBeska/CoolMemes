@@ -102,6 +102,11 @@ function init() {
     $('button.create').on('click', function () {
         $('div.create').removeClass('d-none');
     });
+    var loc = $('form.update').attr('action') ? $('form.update').attr('action') + '/' : location.href + '/';
+    $('.table').on('click', 'a.view', function (e) {
+        e.preventDefault();
+       changeUrl(loc + $(this).parents('tr').attr('id'),false);
+    });
     $('.table').on('click', 'a.remove', function (e) {
         e.preventDefault();
         $.ajax({
@@ -117,7 +122,6 @@ function init() {
             }
         });
     });
-    var loc = $('form.update').attr('action') ? $('form.update').attr('action') + '/' : location.href + '/';
     $('.table').on('click', 'a.update', function (e) {
         e.preventDefault();
         console.log('update!');
@@ -160,7 +164,38 @@ function init() {
 
     });
 }
+function changeUrl(url, container) {
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: null,
+        cache: false,
+        success: function (data) {
+            if (container) {
+                $('body').html(data);
+            } else {
+                $('div#content').html(data);
+            }
+            if (typeof (history.pushState) != "undefined") {
+                let obj = {Page: window.location.pathname, Url: url};
+                history.pushState(obj, obj.Page, obj.Url);
+            } else {
+                window.location.href = url;
+            }
 
+            init();
+            RefreshMenu();
+        }
+    });
+}
+function RefreshMenu() {
+    $('li').removeClass('active');
+    $('li > a').each(function () {
+        if ($(this).attr('href') === window.location.href) {
+            $(this).parent().addClass('active');
+        }
+    });
+}
 $(document).ready(function () {
     "use strict";
 
@@ -176,42 +211,13 @@ $(document).ready(function () {
         }
     });
 
-    function changeUrl(url, container) {
-        $.ajax({
-            url: url,
-            type: 'GET',
-            data: null,
-            cache: false,
-            success: function (data) {
-                if (container) {
-                    $('body').html(data);
-                } else {
-                    $('div#content').html(data);
-                }
-                if (typeof (history.pushState) != "undefined") {
-                    let obj = {Page: window.location.pathname, Url: url};
-                    history.pushState(obj, obj.Page, obj.Url);
-                } else {
-                    window.location.href = url;
-                }
 
-                init();
-                RefreshMenu();
-            }
-        });
-    }
 
     window.addEventListener('popstate', function (event) {
+        console.log(event);
         changeUrl(event.state.Url, false);
 
     });
 
-    function RefreshMenu() {
-        $('li').removeClass('active');
-        $('li > a').each(function () {
-            if ($(this).attr('href') === window.location.href) {
-                $(this).parent().addClass('active');
-            }
-        });
-    }
+
 });
