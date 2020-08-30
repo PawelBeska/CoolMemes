@@ -1,4 +1,4 @@
-<nav class="tabbar fluid-3"><a href="/hot" class="active">
+<nav class="tabbar fluid-3" id="tabbar"><a href="/hot" class="active">
                 Gorące
             </a><a href="/trending" class="">
                 Popularne

@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\MessageBag;
 
-class FreshPostsController extends Controller
+class AuthController extends Controller
 {
-    
 
 }

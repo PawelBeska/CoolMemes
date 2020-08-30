@@ -10,6 +10,7 @@ class TagsController extends Controller
 {
     public function index()
     {
-        return Tag::limit(9)->select("name")->get()->toJson();
+        return Tag::limit(9)->select("id","name")->get()->toJson();
+
     }
 }

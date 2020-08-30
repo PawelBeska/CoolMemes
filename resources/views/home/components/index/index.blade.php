@@ -29,13 +29,13 @@
 
                             </div>
                         </div>
-                        <a data-evt="PostList,TapPost,Hot,,PostTitle" data-entry-id="avzW14b" data-position="1" track="post,v,,,d,avzW14b,l" href="/gag/avzW14b" target="_blank" class="badge-evt badge-track">
+                        <a data-evt="PostList,TapPost,Hot,,PostTitle" data-entry-id="avzW14b" data-position="1" track="post,v,,,d,avzW14b,l" redirect='true' href="/p/${id}" class="badge-evt badge-track">
                             <h1>${title}</h1>
                         </a>
                     </header>
                     <div class="post-container">
                         <div>
-                            <a href="/gag/avzW14b" data-track="post,p,,,d,avzW14b,p" target="_blank" class="badge-track" style="min-height: 463.043px;">
+                            <a  redirect='true' href="/p/${id}" data-track="post,p,,,d,avzW14b,p" class="badge-track" style="min-height: 463.043px;">
                                 <div class="post-view video-post">
                                     <video preload="auto" poster="https://img-9gag-fun.9cache.com/photo/avzW14b_460swp.webp" loop="loop" width="500" style="min-height: 463.043px; width: 500px;">
 
@@ -120,6 +120,7 @@ facebook
         $(window).scroll(function () {
             if (!recentScroll &&$(window).scrollTop() + $(window).height() >= $(document).height()) {
                 page++;
+                console.log('scroll');
                 if (!end) loadMore(page);
 
                 recentScroll = true;

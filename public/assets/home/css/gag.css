@@ -2992,10 +2992,9 @@ footer .secondary a {
 }
 
 .section-sidebar .nav .thumbnail {
-    background-color: rgba(0, 0, 0, .05);
     background-image: none;
     border-radius: 2px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .section-sidebar .nav .thumbnail img {

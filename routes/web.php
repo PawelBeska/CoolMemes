@@ -33,7 +33,9 @@ Route::domain('m.jp2jmd.pl')->group(function () {
         Route::get('/nowy','IndexController@index')->name('posts.create.index');
         Route::get('/u/{id}','UserController@index')->name('user.index');
         Route::get('/ustawienia','UserController@index')->name('user.settings.index');
-
+        Route::get("/login1",'AuthController@index')->name('forms.login.index');
+        Route::get("/recover",'RecoverController@index')->name('forms.recover.index');
+        Route::get('/p/{id}','PostsController@show')->name("posts.show");
     });
 });
 

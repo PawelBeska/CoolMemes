@@ -1,3 +1,4 @@
+init();
 $(document).on({
     ajaxStart: function (e) {
         NProgress.start();
@@ -8,6 +9,8 @@ $(document).on({
 
     }
 });
+
+
 
 $('.custom-file-input').on('change',function(){
     var fileName = document.getElementById("exampleInputFile").files[0].name;
@@ -61,12 +64,72 @@ new Dropdown($('div.notification'), $('div.notification-menu'));
 new Dropdown($('div.option'), $('div.popup-menu.profile-more'));
 
 
+  function changeUrl(url, container) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: null,
+            cache: false,
+            success: function (data) {
+              console.log(data);
+                if (container) {
+                    $('div#app').html(data);
+                } else {
+                    $('div#content').html(data);
+                }
+                if (typeof (history.pushState) != "undefined") {
+                    let obj = {Page: window.location.pathname, Url: url};
+                    history.pushState(obj, obj.Page, obj.Url);
+                } else {
+                    window.location.href = url;
+                }
+              init();
+                RefreshMenu();
+            }
+        });
+    }
 
+
+  function init()
+{
+  
+    $('a:not(#redirect-ignore)').on('click', function (e) {
+          e.preventDefault();
+      console.log('asd');
+        let container = !!$(this).attr('container');
+        if ($(this).attr('redirect')) {
+            e.preventDefault();
+            changeUrl($(this).attr('href'), container);
+        }
+    });
+    window.addEventListener('popstate', function (event) {
+        changeUrl(event.state.Url,false);
+
+    });
+  
+}
+
+
+    function RefreshMenu() {
+        $('li.selected').removeClass('selected');
+        $('li > a').each(function () {
+            if ($(this).attr('href') === window.location.href) $(this).parent().addClass('selected');
+        });
+    }
 
 
 $(document).ready(function () {
     "use strict";
     RefreshMenu();
+    $("a.account#redirect-ignore").click(function (){
+       $("#menu_konta").addClass("overlay-layer");
+       $("#menu_konta_cien").addClass("shade");
+    });
+    $("#menu_konta_cien").click(function(){
+        $("#menu_konta").removeClass("overlay-layer");
+        $("#menu_konta_cien").removeClass("shade");
+    });
+
     let formLogin = $("form#login");
     formLogin.submit(function (e) {
         e.preventDefault();
@@ -102,64 +165,7 @@ $(document).ready(function () {
         });
     });
 
-    function changeUrl(url, container) {
-        $.ajax({
-            url: url,
-            type: 'GET',
-            data: null,
-            cache: false,
-            success: function (data) {
-                if (container) {
-                    $('body').html(data);
-                } else {
-                    $('div#content').html(data);
-                }
-                if (typeof (history.pushState) != "undefined") {
-                    let obj = {Page: window.location.pathname, Url: url};
-                    history.pushState(obj, obj.Page, obj.Url);
-                } else {
-                    window.location.href = url;
-                }
-                RefreshMenu();
-            }
-        });
-    }
-
-    $('a#media-upload').on('click', function (e) {
-        e.preventDefault();
-        let id = $(this).attr('to');
-       let selector = $('div#'+ id);
-       console.log(id);
-        if (selector.is(":visible"))
-            selector.hide();
-        else {
-            $('.uploader').each(function () {
-                $(this).hide();
-            });
-            selector.show();
-        }
-        $('div#'+ $(this).attr('open')).show();
-    });
-
-    $('a:not(#media-upload)').on('click', function (e) {
-        let container = !!$(this).attr('container');
-        if ($(this).attr('redirect')) {
-            e.preventDefault();
-            changeUrl($(this).attr('href'), container);
-        }
-    });
-    window.addEventListener('popstate', function (event) {
-        changeUrl(event.state.Url,false);
-
-    });
-
-
-    function RefreshMenu() {
-        $('li.selected').removeClass('selected');
-        $('li > a').each(function () {
-            if ($(this).attr('href') === window.location.href) $(this).parent().addClass('selected');
-        });
-    }
+  
 
 
 });

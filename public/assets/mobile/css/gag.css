@@ -84,7 +84,7 @@ video {
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline
+    vertical-align: baseline;
 }
 
 article,
@@ -974,7 +974,7 @@ input[type=button] {
 
 .navbar .right {
     display: inline-flex;
-    padding: 8px
+    padding: 8px;
 }
 
 .navbar.no-shadow {
@@ -982,7 +982,7 @@ input[type=button] {
 }
 
 .navbar a {
-    color: #fff
+    color: black;
 }
 
 .navbar.black {
@@ -1042,7 +1042,7 @@ input[type=button] {
     display: block;
     width: 24px;
     height: 24px;
-    padding: 4px 6px
+    padding: 4px 6px;
 }
 
 .navbar a.icon.more {
@@ -1050,7 +1050,6 @@ input[type=button] {
 }
 
 .navbar .thumbnail {
-    background-color: #999
 }
 
 .navbar .thumbnail,
@@ -2056,8 +2055,8 @@ nav.drawer-menu {
 }
 
 .menu-list .picture {
-    padding: 8px 0 8px 64px;
-    flex-grow: 1
+    padding: 8px 0 8px 48px;
+    flex-grow: 1;
 }
 
 .menu-list .thumbnail {
@@ -2099,7 +2098,6 @@ nav.drawer-menu {
     width: 32px;
     height: 32px;
     border-radius: 4px;
-    top: 4px
 }
 
 .menu-list .picture .thumbnail.home {

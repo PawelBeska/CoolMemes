@@ -60,6 +60,10 @@
     <a class="badge-scroll-to-top back-to-top">Back to top</a>
 </section>
 
+<script>
+
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <script src="{{URL::asset('assets/home/js/custom.js')}}"></script>
 

@@ -12,13 +12,14 @@
     <!---------------------------------------------------------------------------------------------->
             <div class="right">
                 <!--  Wyszukaj -->
-                <a href="/search" class="icon">
-                    <i class="icn search"></i>
-                </a>
+
+                        <a href="/search" style="margin-top:4px;"><span class="material-icons">search </span></a>
+
     <!---------------------------------------------------------------------------------------------->
                 <a href="/notifications" class="icon"><!----> <i class="icn noti"></i></a>
-                <a href="javascript:void(0)" class="icon">
-                    <div class="thumbnail"><img
-                            src="https://accounts-cdn.9gag.com/media/default-avatar/1_41_100_v0.jpg"></div>
+                <a href="javascript:void(0)" id="redirect-ignore" class="icon account">
+                    <div class="thumbnail"><span class="material-icons">
+account_circle
+</span></div>
                 </a></div>
         </header>

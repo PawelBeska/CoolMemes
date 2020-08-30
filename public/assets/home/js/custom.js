@@ -140,6 +140,7 @@ $(document).ready(function () {
     });
 
     $('a:not(#media-upload)').on('click', function (e) {
+      console.log('click');
         let container = !!$(this).attr('container');
         if ($(this).attr('redirect')) {
             e.preventDefault();
