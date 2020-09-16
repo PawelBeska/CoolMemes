@@ -14,16 +14,14 @@
 
         </div>
       <script>
-        postsInit();
-        function postsInit()
-        {
-           const tag = ({id, name}) => `
+
+
+          const tag = ({id, name}) => `
                            <a href="/t/${id}">
                 ${name}
             </a>
         `;
- 
-    const item = ({id, title, description}) => `
+          const item = ({id, title, description}) => `
     <div id="stream-0">
     <div>
         <article class="post-cell photo">
@@ -39,7 +37,7 @@
                                     loading="lazy"></picture>
                         </a>
                         <p class="message"><a href="https://9gag.com/funny?ref=post-section" class="section">
-                                Funnyđź”Ą
+                                Funny
                             </a> Â· 3h </p></div><a href="javascript:void(0)" class="icon"><i
     class="icn more"></i></a></div>
     <a href="/gag/aVwK932"><h3>${title}</h3></a></header>
@@ -52,7 +50,7 @@
         </a>
         </div>
     </div>
- 
+
     <div class="post-action"><a href="javascript:void(0)" class="btn upvote"><i class="icn upvote-000"></i>
     1.6K
     </a> <a href="javascript:void(0)" class="btn downvote"><i class="icn downvote-000"></i>
@@ -66,29 +64,36 @@
     </div>
     </div>
     `;
-    let page = 1;
-    let end = 0;
-    loadMore(page);
-    let recentScroll = false;
-    $('div').bind("scrollstop", function() {
-        console.log($(window).scrollTop() + $(window).height());
-        console.log($(document).height());
-        if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            page++;
-            console.log('scroll');
-            if (!end) loadMore(page);
- 
-            recentScroll = true;
-            window.setTimeout(() => {
-                recentScroll = false;
-            }, 1000)
+        function postsInit() {
+            console.log("loadPosts EVENT");
+
+
+
+            let page = 1;
+            let end = 0;
+            loadMore(page);
+            let recentScroll = false;
+            $('div').bind("scrollstop", function () {
+                console.log($(window).scrollTop() + $(window).height());
+                console.log($(document).height());
+                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    page++;
+                    console.log('scroll');
+                    if (!end) loadMore(page);
+
+                    recentScroll = true;
+                    window.setTimeout(() => {
+                        recentScroll = false;
+                    }, 1000)
+                }
+            });
         }
-    });
- 
+
     function loadMore(page) {
         $.ajax({
             url: "{{route('api.get.posts')}}?page=" + page,
             type: 'POST',
+            data: {_token: $('meta[name="csrf-token"]').attr('content')},
             global: false,
             cache: false,
             beforeSend: function () {
@@ -98,16 +103,14 @@
             .done(function (data) {
                 $('div.loading').remove();
                 if (JSON.parse(data).data.length === 0) {
-                    console.log('koniec');
                     end = true;
                     $('div#items').append('<p>Nie ma wiÄ™cej memĂłw :(');
- 
+
                 }
                 let post_item = JSON.parse(data).data;
                 $.each(post_item, function (heading, text) {
                     $('div#items').append(item(text));
                     $.each(text.tags, function (heading, text_) {
-                        console.log(text.id);
                         $('div#tag-' + text.id).append(tag(text_));
                     })
                 });
@@ -116,7 +119,7 @@
                 alert('Brak odpowiedzi od serwera');
             });
     }
- 
+
     function addLoadingAnimation() {
         let loading = `<div class="loading">
                 <a class="btn spin">
@@ -134,8 +137,8 @@
             </div>`;
         $('section#list-view-2').append(loading);
     }
- 
- 
+
+
     const tag_ = ({id, name}) => `    <li class="drawer-item"><a href="/${name}-${id}" id="tag-${id}" class="picture">
                                 <div class="thumbnail large">
  <span class="material-icons">
@@ -167,7 +170,7 @@
         $("div#sidebar").show();
     });
 
-        }
+
       </script>
     </div>
 </div>

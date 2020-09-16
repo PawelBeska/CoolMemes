@@ -1,7 +1,7 @@
 <header class="navbar no-shadow">
                             <!--  Menu  -->
             <div class="left">
-                <a href="javascript:void(0)" class="menu" id="menu">
+                <a href="javascript:void(0)" class="menu" id="redirect-ignore">
                     <span class="material-icons">menu</span>
                 </a>
                 <a href="/" class="logo">

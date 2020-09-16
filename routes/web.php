@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes();
+
 Route::namespace('Api')->prefix('api')->name('api.')->group(function () {
     Route::post('/posts', 'PostsController@index')->name('get.posts');
     Route::post('/t', 'TagsController@index')-> name('get.tags');
@@ -26,6 +26,7 @@ Route::domain('m.jp2jmd.pl')->group(function () {
         return view('mobile_work');
     });
     Route::namespace('Mobile')->name('mobile.')->group(function () {
+        Auth::routes();
         Route::get('/home', 'IndexController@index')->name('index');
         Route::get('/gorace', 'IndexController@index')->name('posts.hot.index');
         Route::get('/popularne', 'IndexController@index')->name('posts.trending.index');
@@ -33,8 +34,6 @@ Route::domain('m.jp2jmd.pl')->group(function () {
         Route::get('/nowy','IndexController@index')->name('posts.create.index');
         Route::get('/u/{id}','UserController@index')->name('user.index');
         Route::get('/ustawienia','UserController@index')->name('user.settings.index');
-        Route::get("/login1",'AuthController@index')->name('forms.login.index');
-        Route::get("/recover",'RecoverController@index')->name('forms.recover.index');
         Route::get('/p/{id}','PostsController@show')->name("posts.show");
     });
 });
@@ -52,6 +51,7 @@ Route::domain('jp2jmd.pl')->group(function () {
     })->name('logout');
 
     Route::namespace('Home')->name('home.')->group(function () {
+        Auth::routes();
         Route::get('/home', 'IndexController@index')->name('index');
         Route::get('/gorace', 'IndexController@index')->name('posts.hot.index');
         Route::get('/popularne', 'IndexController@index')->name('posts.trending.index');

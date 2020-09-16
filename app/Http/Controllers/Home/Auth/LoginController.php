@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Home\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -37,13 +37,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-  /**
- * Get the login username to be used by the controller.
- *
- * @return string
- */
-public function username()
-{
-    return 'name';
-}
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'name';
+    }
+
+    public function showLoginForm()
+    {
+        return view('home.pages.auth.login');
+    }
 }

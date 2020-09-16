@@ -64,7 +64,7 @@ a span.material-icons {
 
 #nprogress .bar {
     height: 2px !important;
-    background: #009769 !important;
+    background: #0f120f !important;
     background-size: 500% !important;
     animation: 2s linear infinite barprogress, .3s fadein !important;
     width: 100% !important;
@@ -1552,3 +1552,4 @@ a span.material-icons {
 .vi-stories-z-index-float {
     z-index: 901;
 }
+

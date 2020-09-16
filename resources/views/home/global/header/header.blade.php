@@ -60,8 +60,8 @@ brightness_3
             </div>
             @guest
                 <div class="visitor-function">
-                    <a href="{{route('login')}}" redirect="true" container="true" class="btn-mute">Logowanie</a>
-                    <a href="{{route('register')}}" redirect="true" container="true" class="btn-primary">Rejestracja</a>
+                    <a href="{{route('home.login')}}" redirect="true" container="true" class="btn-mute">Logowanie</a>
+                    <a href="{{route('home.register')}}" redirect="true" container="true" class="btn-primary">Rejestracja</a>
                 </div>
             @endguest()
             @auth
