@@ -8,6 +8,12 @@
   - https://pl.wikipedia.org/wiki/Kluczowe_wska%C5%BAniki_efektywno%C5%9Bci 
   - https://pl.wikipedia.org/wiki/Zr%C3%B3wnowa%C5%BCona_karta_wynik%C3%B3w 
 
+## Grafika
+![Opera Zrzut ekranu_2021-01-28_153137_jp2jmd pl](https://user-images.githubusercontent.com/6086510/106153096-76b0bd80-617e-11eb-9eed-8d4882a02a4c.png)
+![Opera Zrzut ekranu_2021-01-28_153257_jp2jmd pl](https://user-images.githubusercontent.com/6086510/106153273-a790f280-617e-11eb-8bf0-8046681d73cc.png)
+
+![Opera Zrzut ekranu_2021-01-28_153402_jp2jmd pl](https://user-images.githubusercontent.com/6086510/106153113-7ca69e80-617e-11eb-8dde-93d7d2226e36.png)
+
 
 ## Wygląd: 
 
