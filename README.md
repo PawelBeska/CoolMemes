@@ -25,13 +25,13 @@
 
 
 
-##Logowanie: 
+## Logowanie: 
 
 - Logowanie musi być poprzedzone aktywacją konta poprzez email. 
 - Do logowania używany jest login i hasło (email jest niewidoczny dla pozostałych użytkowników) 
 - Logowanie musi być zabezpieczone recaptchą której klucze znajdują się w ustawieniach serwisu. 
 
-##Rejestracja: 
+## Rejestracja: 
 
 - Po rejestracji zostaje wysłany link aktywacyjny na email użytkownika. 
 - Login filtrowany tak aby było wszystko z małych liter.  
@@ -39,15 +39,15 @@
 - Rejestracja musi być zabezpieczona recaptchą której klucze znajdują się w ustawieniach serwisu. 
 
  
-#Posty: 
+# Posty: 
 
-##Rodzaje: 
+## Rodzaje: 
 
 - Post z samą grafiką lub/i z tekstem. 
 - Post z filmikiem lub/i z tekstem. (*) 
 - Post z samym tekstem. 
 
-##Akcje dostępne przy postach: 
+## Akcje dostępne przy postach: 
 
 - Like/Dislike Posta 
 - Zgłoszenie posta 
@@ -58,7 +58,7 @@
   - Przeniesienie na "główną" 
 
 
-##Dostępne statystyki: 
+## Dostępne statystyki: 
 
 - Dzienne: 
   - Ilość wyświetleń posta (wykres) 
@@ -72,7 +72,7 @@
 
  
 
-##Dodawanie posta: 
+## Dodawanie posta: 
 Dodawanie posta musi być zabezpieczone recaptchą której klucze znajdują się w ustawieniach serwisu. 
 
 - Pola: 
@@ -81,7 +81,7 @@ Dodawanie posta musi być zabezpieczone recaptchą której klucze znajdują się
   - Obrazek lub Wideo 
   - Kategoria 
   
-##Komentarze: 
+## Komentarze: 
 <p>Cytowanie komentarza jak i cytowanie posta. </p>
 <p>Dodawanie komentarza musi być zabezpieczone recaptchą której klucze znajdują się w ustawieniach serwisu. </p>
 
@@ -93,14 +93,14 @@ Dodawanie posta musi być zabezpieczone recaptchą której klucze znajdują się
 
 
 
-#Panel administratora: 
+# Panel administratora: 
 
 
-##Logowanie: 
+## Logowanie: 
 
 - Współdzielone z logowaniem strony głównej (odnosnik w headerze). 
 
-##Zarządzanie: 
+## Zarządzanie: 
 
 - Serwis: 
   - Facebook i media społecznościowe. 
